@@ -1,0 +1,325 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 2026-04-09 23:06:34
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.4.0-universal.jar%23314!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.4.0-universal.jar%23314!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23309!/:?] {re:classloading}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mods: NONE
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:1.0] {}
+-- MOD oculus --
+Details:
+	Mod File: /workspaces/sv-con-paraguas/servidor_minecraft/mods/oculus-mc1.20.1-1.8.0.jar
+	Failure message: Oculus (oculus) has failed to load correctly
+		java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+	Mod Version: 1.8.0
+	Mod Issue URL: https://github.com/Asek3/Oculus/issues
+	Exception message: java.lang.RuntimeException: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:1.0] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at java.lang.Class.getDeclaredConstructors0(Native Method) ~[?:?] {re:mixin}
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:3375) ~[?:?] {re:mixin}
+	at java.lang.Class.getConstructor0(Class.java:3580) ~[?:?] {re:mixin}
+	at java.lang.Class.getDeclaredConstructor(Class.java:2756) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:73) ~[javafmllanguage-1.20.1-47.4.0.jar%23311!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.0.jar%23310!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+-- MOD fadingnightvision --
+Details:
+	Caused by 0: java.lang.ExceptionInInitializerError
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+		at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+		at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.0.jar%23311!/:?] {}
+		at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.0.jar%23310!/:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+		at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+		at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+	Mod File: /workspaces/sv-con-paraguas/servidor_minecraft/mods/fadingnightvision-1.20.1_1.2.2.1-all.jar
+	Failure message: Fading Night Vision (fadingnightvision) has failed to load correctly
+		java.lang.ExceptionInInitializerError: null
+	Mod Version: 1.2.2.1
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.RuntimeException: Attempted to load class net/minecraft/client/KeyMapping for invalid dist DEDICATED_SERVER
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[fmlloader-1.20.1-47.4.0.jar%2369!/:1.0] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at net.perpetualeve.fadingnightvision.FadingNightVision.<clinit>(FadingNightVision.java:36) ~[fadingnightvision-1.20.1_1.2.2.1-all.jar%23239!/:1.20.1_1.2.2.1] {re:classloading}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.0.jar%23311!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.0.jar%23310!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+-- MOD watermedia --
+Details:
+	Caused by 0: java.lang.RuntimeException: Failed starting WATERMeDIA for Forge: WATERMeDIA CANNOT be installed YET on SERVER-SIDE. Please remove WATERMeDIA from the server, and keep it on client
+		at org.watermedia.loaders.ForgeMCLoader.<init>(ForgeMCLoader.java:53) ~[watermedia-2.1.37.jar%23300!/:2.1.37] {re:classloading}
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+		at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+		at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.0.jar%23311!/:?] {}
+		at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.0.jar%23310!/:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+		at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+		at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+	Mod File: /workspaces/sv-con-paraguas/servidor_minecraft/mods/watermedia-2.1.37.jar
+	Failure message: WaterMedia (watermedia) has failed to load correctly
+		java.lang.RuntimeException: Failed starting WATERMeDIA for Forge: WATERMeDIA CANNOT be installed YET on SERVER-SIDE. Please remove WATERMeDIA from the server, and keep it on client
+	Mod Version: 2.1.37
+	Mod Issue URL: https://github.com/WaterMediaTeam/watermedia/issues
+	Exception message: org.watermedia.core.exceptions.IllegalEnvironmentException: WATERMeDIA CANNOT be installed YET on SERVER-SIDE. Please remove WATERMeDIA from the server, and keep it on client
+Stacktrace:
+	at org.watermedia.loaders.ForgeMCLoader.<init>(ForgeMCLoader.java:51) ~[watermedia-2.1.37.jar%23300!/:2.1.37] {re:classloading}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.0.jar%23311!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.0.jar%23310!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1044-azure
+	Java Version: 17.0.18, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1461849600 bytes (1394 MiB) / 2147483648 bytes (2048 MiB) up to 10737418240 bytes (10240 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.94
+	Virtual memory used (MB): 5865.26
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx10G
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		kotlinforforge@4.12.0
+		javafml@null
+		lowcodefml@null
+	Mod List: 
+		TreeChop-1.20.1-forge-0.19.0-fixed.jar            |HT's TreeChop                 |treechop                      |0.19.0              |COMMON_SET|Manifest: NOSIGNATURE
+		kuma-api-forge-20.1.12+1.20.1.jar                 |KumaAPI                       |kuma_api                      |20.1.12             |COMMON_SET|Manifest: NOSIGNATURE
+		supermartijn642configlib-1.1.8-forge-mc1.20.jar   |SuperMartijn642's Config Libra|supermartijn642configlib      |1.1.8               |COMMON_SET|Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |COMMON_SET|Manifest: NOSIGNATURE
+		hamsters-forge-1.0.3-1.20.1.jar                   |Hamsters                      |hamsters                      |1.20.1-1.0.3        |COMMON_SET|Manifest: NOSIGNATURE
+		Incendium_1.20.x_v5.3.5.jar                       |Incendium                     |incendium                     |5.3.5               |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedcore-1.20.1-1.3.19.1659.jar          |Sophisticated Core            |sophisticatedcore             |1.3.19.1659         |COMMON_SET|Manifest: NOSIGNATURE
+		Nether_s Overhaul-1.20.1_V1.3.6.jar               |Nether's Overhaul             |netheroverhaul                |1.3.6               |COMMON_SET|Manifest: NOSIGNATURE
+		duckling-3.0.0-forge.jar                          |Duckling                      |duckling                      |3.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-data-attachment-api-v1-1.0.0+30ef839e77.jar|Fabric Data Attachment API (v1|fabric_data_attachment_api_v1 |1.0.0+30ef839e77    |COMMON_SET|Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.20.1-3.24.32.1645.jar    |Sophisticated Backpacks       |sophisticatedbackpacks        |3.24.32.1645        |COMMON_SET|Manifest: NOSIGNATURE
+		ChanceCubes-1.20.1-5.0.2.489.jar                  |Chance Cubes                  |chancecubes                   |1.20.1-5.0.2.489    |COMMON_SET|Manifest: NOSIGNATURE
+		mcw-doors-1.1.5-mc1.20.1forge.jar                 |Macaw's Doors                 |mcwdoors                      |1.1.5               |COMMON_SET|Manifest: NOSIGNATURE
+		balm-forge-1.20.1-7.3.38-all.jar                  |Balm                          |balm                          |7.3.38              |COMMON_SET|Manifest: NOSIGNATURE
+		carryon-forge-1.20.1-2.1.2.7.jar                  |Carry On                      |carryon                       |2.1.2.7             |COMMON_SET|Manifest: NOSIGNATURE
+		JustEnoughResources-1.20.1-1.4.0.247.jar          |Just Enough Resources         |jeresources                   |1.4.0.247           |COMMON_SET|Manifest: NOSIGNATURE
+		YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar  |YUNG's Better Nether Fortresse|betterfortresses              |1.20-Forge-2.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |COMMON_SET|Manifest: NOSIGNATURE
+		spelunkers_charm-3.6.0-1.20.1.jar                 |Spelunker's Charm             |spelunkers_charm              |3.6.0               |COMMON_SET|Manifest: NOSIGNATURE
+		twilightforest-1.20.1-4.3.2508-universal.jar      |The Twilight Forest           |twilightforest                |4.3.2508            |COMMON_SET|Manifest: NOSIGNATURE
+		embeddium-0.3.31+mc1.20.1.jar                     |Embeddium                     |embeddium                     |0.3.31+mc1.20.1     |COMMON_SET|Manifest: NOSIGNATURE
+		PrettyPipes-1.15.0-all.jar                        |PrettyPipes                   |prettypipes                   |1.15.0              |COMMON_SET|Manifest: NOSIGNATURE
+		eeeabsmobs-1.20.1-0.97-Fix.jar                    |EEEAB's Mobs                  |eeeabsmobs                    |1.20.1-0.97         |COMMON_SET|Manifest: NOSIGNATURE
+		supermartijn642corelib-1.1.21-forge-mc1.20.1.jar  |SuperMartijn642's Core Lib    |supermartijn642corelib        |1.1.21              |COMMON_SET|Manifest: NOSIGNATURE
+		samurai_dynasty-0.0.51-1.20.1-forge.jar           |Samurai Dynasty               |samurai_dynasty               |0.0.51-1.20.1-forge |COMMON_SET|Manifest: NOSIGNATURE
+		tidal-towns-1.3.4.jar                             |Tidal Towns                   |mr_tidal_towns                |1.3.4               |COMMON_SET|Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |COMMON_SET|Manifest: NOSIGNATURE
+		oculus-mc1.20.1-1.8.0.jar                         |Oculus                        |oculus                        |1.8.0               |ERROR     |Manifest: NOSIGNATURE
+		CerbonsApi-Forge-1.20.1-1.0.0.jar                 |CerbonsApi                    |cerbons_api                   |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		fadingnightvision-1.20.1_1.2.2.1-all.jar          |Fading Night Vision           |fadingnightvision             |1.2.2.1             |ERROR     |Manifest: NOSIGNATURE
+		bettervillage-forge-1.20.1-3.3.1-all.jar          |Better village                |bettervillage                 |3.3.1               |COMMON_SET|Manifest: NOSIGNATURE
+		dawnoftimebuilder-forge-1.20.1-1.5.48.jar         |Dawn Of Time                  |dawnoftimebuilder             |1.5.48              |COMMON_SET|Manifest: NOSIGNATURE
+		watervision-FG-mc1.20.1-v0.1.0-alpha.jar          |WaterVision                   |watervision                   |0.1.0-alpha         |COMMON_SET|Manifest: NOSIGNATURE
+		tombstone-1.20.1-9.0.9.jar                        |Corail Tombstone              |tombstone                     |9.0.9               |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-entity-events-v1-1.6.0+6274ab9d77.jar      |Fabric Entity Events (v1)     |fabric_entity_events_v1       |1.6.0+6274ab9d77    |COMMON_SET|Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.29.jar            |Resourceful Lib               |resourcefullib                |2.1.29              |COMMON_SET|Manifest: NOSIGNATURE
+		accessories-neoforge-1.0.0-beta.48+1.20.1.jar     |Accessories                   |accessories                   |1.0.0-beta48+1.20.1 |COMMON_SET|Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |COMMON_SET|Manifest: NOSIGNATURE
+		otyacraftengine-forge-mc1.20-3.7.0-alpha.2.jar    |Otyacraft Engine              |otyacraftengine               |3.7.0-alpha.2       |COMMON_SET|Manifest: NOSIGNATURE
+		letsdo-meadow-forge-1.3.25.jar                    |[Let's Do] Meadow             |meadow                        |1.3.25              |COMMON_SET|Manifest: NOSIGNATURE
+		ls_furniture-1.0.9-Forge-1.20.1.jar               |Furnection                    |ls_furniture                  |1.0.9               |COMMON_SET|Manifest: NOSIGNATURE
+		mcw-furniture-3.4.1-mc1.20.1forge.jar             |Macaw's Furniture             |mcwfurnitures                 |3.4.1               |COMMON_SET|Manifest: NOSIGNATURE
+		AME_s Mobs 1.5.10 - 1.20.1.jar                    |AME's Mobs                    |animatedmobsmod               |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		moogs_structure_lib-1.1.0-1.20-1.20.4-forge.jar   |Moog's Structure Lib          |moogs_structures              |1.1.0-1.20-1.20.4   |COMMON_SET|Manifest: NOSIGNATURE
+		framework-forge-1.20.1-0.8.0.jar                  |Framework                     |framework                     |0.8.0               |COMMON_SET|Manifest: 0d:78:5f:44:c0:47:0c:8c:e2:63:a3:04:43:d4:12:7d:b0:7c:35:37:dc:40:b1:c1:98:ec:51:eb:3b:3c:45:99
+		illageandspillagerespillaged-1.2.8.jar            |Illage and Spillage: Respillag|illageandspillage             |1.2.8               |COMMON_SET|Manifest: NOSIGNATURE
+		mowziesmobs-1.8.2.jar                             |Mowzie's Mobs                 |mowziesmobs                   |1.8.2               |COMMON_SET|Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.3.jar                   |GeckoLib 4                    |geckolib                      |4.8.3               |COMMON_SET|Manifest: NOSIGNATURE
+		mcef-forge-2.1.6-1.20.1.jar                       |MCEF (Minecraft Chromium Embed|mcef                          |2.1.6-1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		tameablebeasts-1.20.1-7.1.3.jar                   |Tameable Beasts               |tameablebeasts                |7.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		watermedia_youtube_plugin-2.1.2.jar               |WaterMedia YT Plugin          |watermedia_youtube_plugin     |2.1.2               |COMMON_SET|Manifest: NOSIGNATURE
+		watermedia-2.1.37.jar                             |WaterMedia                    |watermedia                    |2.1.37              |ERROR     |Manifest: NOSIGNATURE
+		DreamCasLib 1.0.1 - 1.20.1.jar                    |DreamCasLib                   |dreamcaslib                   |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.112.jar                  |Just Enough Items             |jei                           |15.20.0.112         |COMMON_SET|Manifest: NOSIGNATURE
+		ls_core-1.1.5-Forge-1.20.1.jar                    |LYIVX's Core                  |ls_core                       |1.1.5               |COMMON_SET|Manifest: NOSIGNATURE
+		deltaboxlib-forge-2.2.0+1.20.1.jar                |Deltabox Lib                  |deltaboxlib                   |2.2.0               |COMMON_SET|Manifest: NOSIGNATURE
+		The_Graveyard_3.1_(FORGE)_for_1.20.1.jar          |The Graveyard                 |graveyard                     |3.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		Pehkui-3.8.2+1.20.1-forge.jar                     |Pehkui                        |pehkui                        |3.8.2+1.20.1-forge  |COMMON_SET|Manifest: NOSIGNATURE
+		libraryferret-forge-1.20.1-4.0.0.jar              |Library ferret                |libraryferret                 |4.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		obscure_api-18.jar                                |Obscure API                   |obscure_api                   |18                  |COMMON_SET|Manifest: NOSIGNATURE
+		waystones-forge-1.20.1-14.1.20.jar                |Waystones                     |waystones                     |14.1.20             |COMMON_SET|Manifest: NOSIGNATURE
+		journeymap-1.20.1-5.10.3-forge.jar                |Journeymap                    |journeymap                    |5.10.3              |COMMON_SET|Manifest: NOSIGNATURE
+		YungsCaveBiomes-1.20.1-Forge-2.0.5.jar            |YUNG's Cave Biomes            |yungscavebiomes               |1.20.1-Forge-2.0.5  |COMMON_SET|Manifest: NOSIGNATURE
+		travelersbackpack-forge-1.20.1-9.1.53.jar         |Traveler's Backpack           |travelersbackpack             |9.1.53              |COMMON_SET|Manifest: NOSIGNATURE
+		GlitchCore-forge-1.20.1-0.0.1.1.jar               |GlitchCore                    |glitchcore                    |0.0.1.1             |COMMON_SET|Manifest: NOSIGNATURE
+		call_of_yucutan-1.0.13-forge-1.20.1.jar           |Call of Yucatán               |call_of_yucutan               |1.0.13              |COMMON_SET|Manifest: NOSIGNATURE
+		BOMD-Forge-1.20.1-1.1.1.jar                       |Bosses of Mass Destruction    |bosses_of_mass_destruction    |1.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		fusion-1.2.12-forge-mc1.20.1.jar                  |Fusion                        |fusion                        |1.2.12              |COMMON_SET|Manifest: NOSIGNATURE
+		azurelib-neo-1.20.1-3.1.4.jar                     |AzureLib                      |azurelib                      |3.1.4               |COMMON_SET|Manifest: NOSIGNATURE
+		DungeonsAriseSevenSeas-1.20.x-1.0.2-forge.jar     |When Dungeons Arise: Seven Sea|dungeons_arise_seven_seas     |1.0.2               |COMMON_SET|Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.0-universal.jar                 |Forge                         |forge                         |47.4.0              |COMMON_SET|Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		emotecraft-for-MC1.20.1-2.2.7-b.build.50-forge.jar|Emotecraft                    |emotecraft                    |2.2.7-b.build.50    |COMMON_SET|Manifest: NOSIGNATURE
+		block-factory-s-biomes-1.0.5b-1.20.1.jar          |Block Factory's Biomes        |bf_biomes                     |1.0.5               |COMMON_SET|Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		Piglet_Structures_1.20.1(ver.1.455).jar           |Piglet Structures             |piglet_structures             |1.455               |COMMON_SET|Manifest: NOSIGNATURE
+		benssharks-1.3.0-forge-1.20.1.jar                 |Ben's Sharks                  |benssharks                    |1.3.0               |COMMON_SET|Manifest: NOSIGNATURE
+		roberts_collection-2.0.0-forge-1.20.1.jar         |Robert's Collection           |roberts_collection            |2.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		Luminous Nether V1.3.2 - Forge 1.20.1.jar         |Luminous Nether               |luminous_nether               |1.3.2               |COMMON_SET|Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.10.jar            |TerraBlender                  |terrablender                  |3.0.1.10            |COMMON_SET|Manifest: NOSIGNATURE
+		BiomesOPlenty-forge-1.20.1-19.0.0.96.jar          |Biomes O' Plenty              |biomesoplenty                 |19.0.0.96           |COMMON_SET|Manifest: NOSIGNATURE
+		palegardenbackport-forge-2.0.3+1.20.1.jar         |Pale Garden Backport          |palegardenbackport            |2.0.3               |COMMON_SET|Manifest: NOSIGNATURE
+		moonlight-1.20-2.16.28-forge.jar                  |Moonlight Library             |moonlight                     |1.20-2.16.28        |COMMON_SET|Manifest: NOSIGNATURE
+		fabric-api-base-0.4.31+ef105b4977.jar             |Fabric API Base               |fabric_api_base               |0.4.31+ef105b4977   |COMMON_SET|Manifest: NOSIGNATURE
+		mixinsquared-forge-0.1.1.jar                      |MixinSquared                  |mixinsquared                  |0.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		Jade-1.20.1-Forge-11.13.2.jar                     |Jade                          |jade                          |11.13.2+forge       |COMMON_SET|Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.35_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.35             |COMMON_SET|Manifest: NOSIGNATURE
+		waterframes-FORGE-mc1.20.1-v2.1.22.jar            |WaterFrames                   |waterframes                   |2.1.22              |COMMON_SET|Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |COMMON_SET|Manifest: NOSIGNATURE
+		Ribbits-1.20.1-Forge-3.0.5.jar                    |Ribbits                       |ribbits                       |1.20.1-Forge-3.0.5  |COMMON_SET|Manifest: NOSIGNATURE
+		plushies-1.4.0-forge.jar                          |Plushie Mod                   |plushies                      |1.4.0               |COMMON_SET|Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |COMMON_SET|Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |COMMON_SET|Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |COMMON_SET|Manifest: NOSIGNATURE
+		mes-1.4.6-1.20.jar                                |Moog's End Structures         |mes                           |1.4.6-1.20-forge    |COMMON_SET|Manifest: NOSIGNATURE
+		legendarymonsters-2.0.6 MC 1.20.1.jar             |LegendaryMonsters             |legendary_monsters            |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		Armor of the Ages-forge-1.20.1-1.3.12.jar         |Armor of the Ages             |armoroftheages                |1.3.12              |COMMON_SET|Manifest: NOSIGNATURE
+		forgottenruins-forge-1.20.1-0.0.13.jar            |Forgotten Ruins               |forgottenruins                |0.0.13              |COMMON_SET|Manifest: NOSIGNATURE
+		crittersandcompanions-forge-1.20.1-2.3.5.jar      |Critters and Companions       |crittersandcompanions         |1.20.1-2.3.5        |COMMON_SET|Manifest: NOSIGNATURE
+		ImmediatelyFast-Forge-1.5.4+1.20.4.jar            |ImmediatelyFast               |immediatelyfast               |1.5.4+1.20.4        |COMMON_SET|Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |COMMON_SET|Manifest: NOSIGNATURE
+		underwater_village-1.0.2-forge-1.20.1.jar         |underwater_village            |underwater_village            |1.0.2               |COMMON_SET|Manifest: NOSIGNATURE
+		MoogsVoyagerStructures-1.20-5.0.4.jar             |Moog's Voyager Structures     |mvs                           |5.0.4               |COMMON_SET|Manifest: NOSIGNATURE
+		ferritecore-6.0.1-forge.jar                       |Ferrite Core                  |ferritecore                   |6.0.1               |COMMON_SET|Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		fabric-object-builder-api-v1-11.1.3+2174fc8477.jar|Fabric Object Builder API (v1)|fabric_object_builder_api_v1  |11.1.3+2174fc8477   |COMMON_SET|Manifest: NOSIGNATURE
+		yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar  |YetAnotherConfigLib           |yet_another_config_lib_v3     |3.6.6+1.20.1-forge  |COMMON_SET|Manifest: NOSIGNATURE
+		Aquaculture-1.20.1-2.5.7.jar                      |Aquaculture 2                 |aquaculture                   |2.5.7               |COMMON_SET|Manifest: NOSIGNATURE
+		MoogsNetherStructures-1.20-2.0.2.jar              |MoogsNetherStructures         |mns                           |2.0.2               |COMMON_SET|Manifest: NOSIGNATURE
+		aquamirae-forge-1.20.1-6.3.1.jar                  |Aquamirae                     |aquamirae                     |6.3.1               |COMMON_SET|Manifest: NOSIGNATURE
+		OpenBlocksTrophies-1.20.1-5.1.5.jar               |OpenBlocks Trophies           |obtrophies                    |1.20.1-5.1.5        |COMMON_SET|Manifest: NOSIGNATURE
+		CarbonConfig-1.20-2.0.0.jar                       |Carbon Config Library         |carbonconfig                  |1.20-2.0.0          |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: 2e675eea-2037-4446-9992-b8fe59945a78
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.0

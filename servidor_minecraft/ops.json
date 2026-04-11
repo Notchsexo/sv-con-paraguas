@@ -1,0 +1,26 @@
+[
+  {
+    "uuid": "d230b4a2-eec2-3d8a-9e1c-6ae75367ccf1",
+    "name": "GalletitaTippy",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "9847f57b-7c0e-37cd-a066-cb5a48962247",
+    "name": "ElFerdark",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "b8bbbada-e2cc-3efe-8403-3b3cef59d8a0",
+    "name": "Tanuki_UxU",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "034783f3-fbfc-3708-91b0-59525927d190",
+    "name": "chocolinpy",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
